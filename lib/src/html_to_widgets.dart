@@ -6,9 +6,9 @@ import 'dart:typed_data';
 
 import 'package:html/dom.dart' as dom;
 import 'package:html/parser.dart' show parse;
-import 'package:htmltopdfwidgets/src/attributes.dart';
-import 'package:htmltopdfwidgets/src/extension/int_extensions.dart';
-import 'package:htmltopdfwidgets/src/utils/app_assets.dart';
+import 'package:vsc_html_pdf_widgets/src/attributes.dart';
+import 'package:vsc_html_pdf_widgets/src/extension/int_extensions.dart';
+import 'package:vsc_html_pdf_widgets/src/utils/app_assets.dart';
 import 'package:http/http.dart';
 
 import '../htmltopdfwidgets.dart';

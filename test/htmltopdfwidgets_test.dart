@@ -16,7 +16,7 @@
 
 import 'dart:io';
 
-import 'package:htmltopdfwidgets/htmltopdfwidgets.dart';
+import 'package:vsc_html_pdf_widgets/htmltopdfwidgets.dart';
 import 'package:test/test.dart';
 
 late Document pdf;

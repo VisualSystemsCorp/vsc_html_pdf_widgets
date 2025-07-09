@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:htmltopdfwidgets/htmltopdfwidgets.dart';
+import 'package:vsc_html_pdf_widgets/htmltopdfwidgets.dart';
 
 void main() {
   createDocument();
@@ -78,7 +78,8 @@ widget's output.
 Since GitHub Flavored is the default extension set, it is the initial setting
 for the formatted Markdown view in the demo.
 """;
-createDocument() async {
+
+void createDocument() async {
   const filePath = 'html_example.pdf';
   const markDownfilePath = 'markdown_example.pdf';
   final file = File(filePath);
@@ -90,16 +91,46 @@ createDocument() async {
   final List<Widget> markdownwidgets = await HTMLToPdf().convertMarkdown(
     markDown,
   );
-  newpdf.addPage(MultiPage(
+  newpdf.addPage(
+    MultiPage(
       maxPages: 200,
       build: (context) {
-        return widgets;
-      }));
-  markdownNewpdf.addPage(MultiPage(
+        return [
+          Wrap(
+            direction: Axis.vertical,
+            children:
+                widgets.map((widget) => wrapWithContainer(widget)).toList(),
+          ),
+        ];
+      },
+    ),
+  );
+  markdownNewpdf.addPage(
+    MultiPage(
       maxPages: 200,
       build: (context) {
-        return markdownwidgets;
-      }));
+        return [
+          Wrap(
+            direction: Axis.vertical,
+            children: markdownwidgets
+                .map((widget) => wrapWithContainer(widget))
+                .toList(),
+          ),
+        ];
+      },
+    ),
+  );
   await file.writeAsBytes(await newpdf.save());
   await markdownfile.writeAsBytes(await markdownNewpdf.save());
+}
+
+Widget wrapWithContainer(Widget child) {
+  return Container(
+    width: 200,
+    decoration: BoxDecoration(
+      border: Border.all(color: const PdfColor.fromInt(0xFF00ff00), width: 1),
+      borderRadius: BorderRadius.circular(4),
+    ),
+    child: child,
+  );
 }

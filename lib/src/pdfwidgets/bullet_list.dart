@@ -30,18 +30,18 @@ class _BulletedListIcon extends StatelessWidget {
   @override
   Widget build(Context context) {
     return SizedBox(
-      width: 22,
-      height: 22,
+      width: style.listItemIndicatorWidth,
+      height: style.bulletListIconSize,
       child: Padding(
-        padding: const EdgeInsets.only(right: 5.0),
-        child: Center(
+        padding: style.listItemIndicatorPadding,
+        child: Align(
+          alignment: Alignment.centerRight,
           child: Container(
-            width: 5,
-            height: 5,
+            width: style.bulletListDotSize,
+            height: style.bulletListDotSize,
             decoration: BoxDecoration(
-              shape: BoxShape.circle, // Bullet icon is circular.
-              color: style.bulletListIconColor ??
-                  PdfColors.black, // Apply custom color.
+              shape: BoxShape.circle,
+              color: style.bulletListIconColor ?? PdfColors.black,
             ),
           ),
         ),

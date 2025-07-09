@@ -1,5 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:htmltopdfwidgets/htmltopdfwidgets.dart';
+import 'package:vsc_html_pdf_widgets/htmltopdfwidgets.dart';
 
 //apply custom styles to html stylee
 class HtmlTagStyle {
@@ -39,6 +39,17 @@ class HtmlTagStyle {
   /// The color of the bullet list icon in a PDF document.
   final PdfColor? bulletListIconColor;
 
+  //bullet list style that will merge with default style
+  final double bulletListDotSize;
+  //bullet list style that will merge with default style
+  final double bulletListIconSize;
+  //bullet list style that will merge with default style
+  final EdgeInsets listItemIndicatorPadding;
+  //bullet list style that will merge with default style
+  final double listItemIndicatorWidth;
+  //bullet list style that will merge with default style
+  final double listItemVerticalSeparatorSize;
+
   /// The color of the divider in a PDF document.
   final PdfColor dividerColor;
 
@@ -65,29 +76,35 @@ class HtmlTagStyle {
 
   /// The height of the divider in a PDF document.
   final double dividerHight;
-  const HtmlTagStyle(
-      {this.boldStyle,
-      this.italicStyle,
-      this.h1Style,
-      this.h2Style,
-      this.h3Style,
-      this.imageAlignment = Alignment.center,
-      this.h4Style,
-      this.h5Style,
-      this.h6Style,
-      this.strikeThrough,
-      this.paragraphStyle,
-      this.codeStyle,
-      this.headingStyle,
-      this.listIndexStyle,
-      this.linkStyle,
-      this.quoteBarColor,
-      this.bulletListIconColor,
-      this.dividerBorderStyle,
-      this.dividerHight = 0.5,
-      this.codeBlockBackgroundColor = PdfColors.red,
-      this.codeblockColor = PdfColors.grey,
-      this.codeDecoration,
-      this.dividerthickness = 1.0,
-      this.dividerColor = PdfColors.grey});
+  const HtmlTagStyle({
+    this.boldStyle,
+    this.italicStyle,
+    this.h1Style,
+    this.h2Style,
+    this.h3Style,
+    this.imageAlignment = Alignment.center,
+    this.h4Style,
+    this.h5Style,
+    this.h6Style,
+    this.strikeThrough,
+    this.paragraphStyle,
+    this.codeStyle,
+    this.headingStyle,
+    this.listIndexStyle,
+    this.linkStyle,
+    this.quoteBarColor,
+    this.bulletListIconColor,
+    this.bulletListDotSize = 5.0,
+    this.bulletListIconSize = 14.0,
+    this.listItemIndicatorPadding = const EdgeInsets.only(right: 12.0),
+    this.listItemIndicatorWidth = 24.0,
+    this.listItemVerticalSeparatorSize = 6.0,
+    this.dividerBorderStyle,
+    this.dividerHight = 0.5,
+    this.codeBlockBackgroundColor = PdfColors.red,
+    this.codeblockColor = PdfColors.grey,
+    this.codeDecoration,
+    this.dividerthickness = 1.0,
+    this.dividerColor = PdfColors.grey,
+  });
 }

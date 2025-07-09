@@ -1,4 +1,4 @@
-import 'package:htmltopdfwidgets/src/htmltagstyles.dart';
+import 'package:vsc_html_pdf_widgets/src/htmltagstyles.dart';
 import 'package:pdf/widgets.dart';
 
 extension IntConverter on int {

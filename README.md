@@ -33,7 +33,7 @@ To use HTMLtoPDFWidgets in your Flutter project, follow these simple steps:
 1. Import the package:
 
 ```dart
-import 'package:htmltopdfwidgets/htmltopdfwidgets.dart';
+import 'package:vsc_html_pdf_widgets/htmltopdfwidgets.dart';
 ```
 
 2. Convert HTML to PDF:
